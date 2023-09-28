@@ -1,0 +1,58 @@
+.footer {
+  &MainContainer {
+    max-width: 1140px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+  }
+  p {
+    margin: 0 auto;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    color: #a0a0a0;
+  }
+
+  span {
+    margin: 0 auto;
+    display: block;
+    width: 1140px;
+    height: 1px;
+    background-color: #e8e8e8;
+    margin-top: 19px;
+    margin-bottom: 20px;
+  }
+
+  &Year {
+    max-width: 1140px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+
+    p {
+      margin: 0;
+      color: black;
+    }
+  }
+
+  &YearContainer {
+    width: 182px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+
+    p {
+      font-size: 13px;
+      margin-right: 20px;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+  &Link {
+    color: black;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+}

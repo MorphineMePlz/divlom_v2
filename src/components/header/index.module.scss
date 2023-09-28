@@ -1,0 +1,130 @@
+.headerWhite {
+  background-color: white;
+}
+
+.header {
+  background-color: #073042;
+
+  &MainContainer {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &Nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 21px 75px;
+    max-width: 1140px;
+  }
+  &Container {
+    align-items: center;
+  }
+
+  &Link {
+    text-decoration: none;
+    margin-right: 30px;
+    color: white;
+  }
+
+  &LinkActive {
+    color: black;
+    background-color: #2be080;
+    padding: 8px 20px;
+    border-radius: 5%;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &Img {
+    animation: spin 5s linear 0s infinite;
+  }
+
+  &MovieLink {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+
+  &MovieLink:first-of-type {
+    margin-right: 16px;
+  }
+
+  &MovieLinkBlack {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+
+  &MovieLinkBlack:first-of-type {
+    margin-right: 16px;
+  }
+
+  &LinkContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2be080;
+    width: 110px;
+    height: 32px;
+    border-radius: 40px;
+    color: black;
+
+    p {
+      margin-left: 15px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 12px;
+    }
+  }
+
+  &LinkContainerWhite {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    width: 110px;
+    height: 32px;
+    border-radius: 40px;
+    color: black;
+    border: 1px solid rgb(245, 239, 239);
+
+    p {
+      margin-left: 15px;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 12px;
+      color: black;
+    }
+  }
+
+  &ProfileLink {
+    text-decoration: none;
+    color: black;
+  }
+
+  &ProfileImg {
+    margin-left: 10px;
+    background: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin-right: 5px;
+  }
+
+  &MovieContainer {
+    width: 212px;
+    margin-left: 87px;
+  }
+}

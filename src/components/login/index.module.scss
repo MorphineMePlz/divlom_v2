@@ -1,0 +1,103 @@
+.login {
+  margin: 0 auto;
+  background-color: white;
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  &Img {
+    animation: spin 5s linear 0s infinite;
+  }
+
+  span {
+    display: inline-block;
+    height: 1px;
+    background-color: #e8e8e8;
+    margin: 10px 0;
+  }
+
+  input {
+    border: none;
+    margin-top: 5px;
+  }
+
+  &Container {
+    margin: 0 auto;
+    max-width: 450px;
+    margin-top: 70px;
+
+    h2 {
+      color: black;
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 30px;
+      margin: 40px 0;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &TextName {
+    color: black;
+    margin-top: 5px;
+  }
+
+  &Text {
+    color: #a0a0a0;
+    font-size: 10px;
+    line-height: 12px;
+    font-weight: 400;
+  }
+
+  &ButtonContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 450px;
+
+    button {
+      width: 396px;
+      height: 45px;
+      background: #3456f3;
+      color: white;
+      margin-top: 214px;
+      border: none;
+      margin-bottom: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+  }
+
+  &LinkContainer {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 350px;
+
+    p {
+      color: #a0a0a0;
+      margin-right: 6px;
+    }
+  }
+
+  &Link {
+    text-decoration: none;
+    color: #3456f3;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+  }
+}

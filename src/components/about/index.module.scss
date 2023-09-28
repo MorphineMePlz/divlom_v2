@@ -1,0 +1,132 @@
+.about {
+  &MainContainer {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+
+  &Header {
+    font-size: 22px;
+    color: black;
+    line-height: 26px;
+    font-weight: 400;
+    margin-top: 110px;
+  }
+
+  span {
+    display: block;
+    width: 1140px;
+    height: 1px;
+    background-color: black;
+    margin-top: 23px;
+    margin-bottom: 70px;
+  }
+
+  &Container {
+    display: flex;
+    justify-content: space-between;
+
+    h2 {
+      color: black;
+      margin-bottom: 26px;
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+    p {
+      color: black;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+  &TextContainer {
+    width: 550px;
+    margin-bottom: 110px;
+  }
+
+  &Progress {
+    max-width: 1140px;
+    display: flex;
+    margin-bottom: 14px;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &SpanGreen {
+    display: block;
+    width: 200px;
+    height: 22px;
+    background-color: #2be080;
+    align-items: center;
+    padding: 9px 14px;
+    display: flex;
+
+    p {
+      color: black;
+      align-items: center;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: 400;
+    }
+  }
+
+  &SpanGray {
+    display: block;
+    width: 912px;
+    height: 22px;
+    background-color: #f2f2f2;
+    align-items: center;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    display: flex;
+
+    p {
+      color: black;
+      margin: 0 auto;
+      width: 80px;
+      align-items: center;
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: 400;
+    }
+  }
+
+  &Back {
+    display: block;
+    width: 200px;
+    height: 22px;
+    align-items: center;
+    padding: 9px 14px;
+    display: flex;
+
+    p {
+      color: #a0a0a0;
+      align-items: center;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: 400;
+    }
+  }
+
+  &Front {
+    display: block;
+    width: 912px;
+    height: 22px;
+    align-items: center;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    display: flex;
+
+    p {
+      color: #a0a0a0;
+      margin: 0 auto;
+      width: 80px;
+      align-items: center;
+      font-size: 14px;
+      line-height: 17px;
+      font-weight: 400;
+    }
+  }
+}
