@@ -13,18 +13,27 @@ const App: React.FC = () => {
   const [isAuth, setIsAuth] = React.useState<boolean>(false);
   const [name, setName] = React.useState("");
 
-  // В useEffect проверьте наличие токена при загрузке страницы
   useEffect(() => {
     const token = Cookies.get("token");
-
     if (token) {
-      // Если есть токен, установите статус аутентификации в true
       setIsAuth(true);
     } else {
-      // Иначе установите статус аутентификации в false
       setIsAuth(false);
     }
   }, []);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const { data } = await axios.get("http://localhost:3000/users/me");
+        setName(data.name);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchUserData();
+  }, [isAuth]);
 
   axios.defaults.withCredentials = true;
 
