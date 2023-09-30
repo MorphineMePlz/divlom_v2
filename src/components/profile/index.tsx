@@ -3,6 +3,7 @@ import Header from "../header";
 import style from "./index.module.scss";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 export interface MainProps {
   setIsAuth: (arg0: boolean) => void;
@@ -17,6 +18,7 @@ const Profile: React.FC<MainProps> = ({ setIsAuth, name }) => {
     try {
       await axios.delete("http://localhost:3000/logout");
       navigate("/");
+      Cookies.remove("token");
       setIsAuth(false);
     } catch (e) {
       console.error(e);

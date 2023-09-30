@@ -6,26 +6,27 @@ import Profile from "../profile";
 import Register from "../register";
 import Login from "../login";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const App: React.FC = () => {
   const navigate = useNavigate();
   const [isAuth, setIsAuth] = React.useState<boolean>(false);
   const [name, setName] = React.useState("");
 
-  // useEffect(() => {
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get("http://localhost:3000/me");
-  //       const userData = response.data;
-  //       console.log(userData);
-  //       setName(userData.name);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
+  // В useEffect проверьте наличие токена при загрузке страницы
+  useEffect(() => {
+    const token = Cookies.get("token");
 
-  //   fetchData();
-  // }, []);
+    if (token) {
+      // Если есть токен, установите статус аутентификации в true
+      setIsAuth(true);
+    } else {
+      // Иначе установите статус аутентификации в false
+      setIsAuth(false);
+    }
+  }, []);
+
+  axios.defaults.withCredentials = true;
 
   return (
     <div className={style.page}>

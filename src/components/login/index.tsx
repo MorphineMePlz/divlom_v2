@@ -3,6 +3,7 @@ import style from "./index.module.scss";
 import Logo from "../../assets/images/logo.svg";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 export interface LoginProps {
   login: {
@@ -29,10 +30,14 @@ const Login: React.FC<LoginProps & MainProps> = ({ login, setIsAuth }) => {
     setValues((prev) => ({ ...prev, [name]: value }));
   };
 
+  axios.defaults.withCredentials = true;
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:3000/signin", values);
+      const response = await axios.post("http://localhost:3000/signin", values);
+      const token = response.data.token;
+      Cookies.set("token", token);
       setIsAuth(true);
       navigate("/");
     } catch (err) {
