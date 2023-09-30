@@ -7,7 +7,6 @@ import { MainProps } from "../main";
 
 const Header: React.FC<MainProps> = ({ isAuth }) => {
   const location = useLocation();
-  console.log(location.pathname);
   return !isAuth ? (
     <div className={style.header}>
       <div className={style.headerMainContainer}>

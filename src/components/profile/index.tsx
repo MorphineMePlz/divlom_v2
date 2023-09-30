@@ -1,19 +1,36 @@
 import React from "react";
 import Header from "../header";
 import style from "./index.module.scss";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-type Props = {};
+export interface MainProps {
+  setIsAuth: (arg0: boolean) => void;
+  name: string;
+}
 
-const Profile: React.FC = (props: Props) => {
+const Profile: React.FC<MainProps> = ({ setIsAuth, name }) => {
+  const navigate = useNavigate();
+
+  const handleLogout = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      await axios.delete("http://localhost:3000/logout");
+      navigate("/");
+      setIsAuth(false);
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <>
       <div>
         <Header isAuth={true}></Header>
       </div>
       <div className={style.profile}>
-        <div className={style.profileContainer}>
-          <h2>Привет, Виталий!</h2>
+        <form className={style.profileContainer} onSubmit={handleLogout}>
+          <h2>{`Привет!${name}`}</h2>
           <div className={style.profileInfoContainer}>
             <p>Имя</p>
             <input
@@ -29,11 +46,11 @@ const Profile: React.FC = (props: Props) => {
           </div>
           <div className={style.profileButtonContainer}>
             <button className={style.profileButtonEdit}>Редактировать</button>
-            <Link to="/" className={style.profileButtonLogout}>
+            <button type="submit" className={style.profileButtonLogout}>
               Выйти из аккаунта
-            </Link>
+            </button>
           </div>
-        </div>
+        </form>
       </div>
     </>
   );
